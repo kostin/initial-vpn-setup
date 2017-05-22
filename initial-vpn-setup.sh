@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DLPATH='https://github.com/kostin/initial-pptp-setup/raw/master'
+DLPATH='https://github.com/kostin/initial-vpn-setup/raw/master'
 
 rpm -Uvh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
 yum -y install epel-release
