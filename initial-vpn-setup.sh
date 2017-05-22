@@ -38,7 +38,7 @@ echo "require-mppe-128" >> /etc/ppp/options
 
 service pptpd start
 
-sed -i -e 's/net.ipv4.ip_forward = 0/net.ipv4.ip_forward = 1/g' /etc/sysctl.conf
+sed -i '/net.ipv4.ip_forward/c\net.ipv4.ip_forward = 1' /etc/sysctl.conf
 sysctl -p
 
 service iptables start
