@@ -21,7 +21,7 @@ fi
 USER=`hostname -s``pwgen 6 1`
 DEV=`route | grep '^default' | grep -o '[^ ]*$'`
 IP=`ip addr show $DEV | grep 'inet ' | awk '{print $2}' | awk -F/ '{print $1}'`
-PASS=`pwgen 32 1`
+PASS=`pwgen 16 1`
 
 echo "localip $IP" >> /etc/pptpd.conf
 echo "remoteip 10.0.0.100-200" >> /etc/pptpd.conf
