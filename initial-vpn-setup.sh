@@ -42,11 +42,13 @@ sed -i -e 's/net.ipv4.ip_forward = 0/net.ipv4.ip_forward = 1/g' /etc/sysctl.conf
 sysctl -p
 
 service iptables start
-iptables -t nat -A POSTROUTING -o $DEV -j MASQUERADE && iptables-save
+iptables -t nat -A POSTROUTING -o $DEV -j MASQUERADE
+iptables-save
 service iptables save
 chkconfig iptables on
 
-service pptpd restart-kill && service pptpd start
+service pptpd restart-kill
+service pptpd start
 
 chkconfig pptpd on
 
