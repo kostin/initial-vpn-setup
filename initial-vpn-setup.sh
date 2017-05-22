@@ -46,11 +46,9 @@ iptables -t nat -A POSTROUTING -o $DEV -j MASQUERADE
 iptables-save
 service iptables save
 chkconfig iptables on
-
 chkconfig pptpd on
+service pptpd restart
 
 echo "PPTP user: $USER"
 echo "PPTP password: $PASS"
 echo "PPTP server: $IP"
-
-service pptpd restart
