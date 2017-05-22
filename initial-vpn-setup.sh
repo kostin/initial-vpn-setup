@@ -47,11 +47,10 @@ iptables-save
 service iptables save
 chkconfig iptables on
 
-service pptpd restart-kill
-service pptpd start
-
 chkconfig pptpd on
 
 echo "PPTP user: $USER"
 echo "PPTP password: $PASS"
 echo "PPTP server: $IP"
+
+service pptpd restart
